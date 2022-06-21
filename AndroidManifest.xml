@@ -40,7 +40,7 @@
             android:defaultToDeviceProtectedStorage="true"
             android:directBootAware="true"
             android:enabled="true"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
 
@@ -51,7 +51,7 @@
 
         <activity
             android:name=".DeviceSettingsActivity"
-            android:exported="false"
+            android:exported="true"
             android:icon="@drawable/ic_asus"
             android:label="@string/advanced_settings"
             android:launchMode="singleTask">
@@ -74,7 +74,7 @@
 
         <activity
             android:name=".kcal.KCalSettingsActivity"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/CustomOptionsTheme"
             android:label="@string/advanced_settings_kcal">
 
@@ -90,8 +90,9 @@
 
         <activity
             android:name="com.asus.zenparts.ambient.AmbientGesturePreferenceActivity"
-            android:label="@string/ambient_display_gestures_title">
-            android:icon="@drawable/ic_doze"
+            android:label="@string/ambient_display_gestures_title"
+			android:exported="true"
+            android:icon="@drawable/ic_doze">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
@@ -99,7 +100,7 @@
 
         <activity
             android:name=".speaker.ClearSpeakerActivity" 
-            android:exported="false" 
+            android:exported="true"
             android:label="@string/clear_speaker_title">
 
             <intent-filter>
@@ -112,6 +113,7 @@
         <service
             android:name=".DiracService"
             android:enabled="true"
+			android:exported="true"
             android:stopWithTask="false" />
 
         <service
@@ -119,6 +121,7 @@
             android:enabled="true"
             android:icon="@drawable/qs_asus"
             android:label="@string/advanced_settings"
+			android:exported="true"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE"/>
@@ -129,6 +132,7 @@
             android:name=".CpuboostTileService"
             android:icon="@drawable/ic_cpuboost"
             android:label="@string/cpuboost_title"
+			android:exported="true"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE"/>
@@ -139,6 +143,7 @@
             android:name=".GpuboostTileService"
             android:icon="@drawable/ic_gpuboost"
             android:label="@string/gpuboost_title"
+			android:exported="true"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE"/>
@@ -149,6 +154,7 @@
             android:name="com.asus.zenparts.DimmerTile"
             android:icon="@drawable/ic_backlight"
             android:label="@string/backlight_dimmer"
+			android:exported="true"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE"/>
@@ -158,6 +164,7 @@
             android:name="com.asus.zenparts.LogTile"
             android:icon="@drawable/ic_qs_log"
             android:label="@string/quick_settings_log_tile_label"
+			android:exported="true"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
                 <action
@@ -166,12 +173,13 @@
         </service>
         <service
             android:name=".FPSInfoService"
-            android:exported="false">
+            android:exported="true">
         </service>
         <service
             android:name=".FPSTileService"
             android:icon="@drawable/ic_fps_info"
             android:label="@string/fps_info_title"
+			android:exported="true"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
                 <action
@@ -179,7 +187,7 @@
             </intent-filter>
         </service>
         <service android:name="com.asus.zenparts.SmartChargingService"
-                android:exported="false">
+                android:exported="true">
         </service>
     </application>
 </manifest>
